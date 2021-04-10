@@ -105,8 +105,20 @@ public class IntList {
             Q = Q.rest;
             A1 = A1.rest;
         }
+        Q.first = A1.first;
+        Q.rest = new IntList();
+        Q = Q.rest;
 
-        Q.rest = new IntList(B.first, B.rest);
+        IntList B1 = B;
+
+        while(B1.rest != null){
+            Q.first = B1.first;
+            Q.rest = new IntList();
+            Q = Q.rest;
+            B1 = B1.rest;
+        }
+        Q.first = B1.first;
+
         return L;
     }
 
